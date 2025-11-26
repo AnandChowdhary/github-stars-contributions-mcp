@@ -1,0 +1,40 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/2024-11-05/mcp-schema.json",
+  "name": "static-prompts",
+  "version": "1.0.0",
+  "description": "Minimal static MCP prompt catalog for GitHub Pages hosting.",
+  "prompts": [
+    {
+      "name": "bug_report",
+      "description": "Summarize a bug using a consistent template.",
+      "arguments": [
+        { "name": "title", "type": "string", "description": "Short bug title" },
+        {
+          "name": "steps",
+          "type": "string",
+          "description": "Reproduction steps or scenario"
+        },
+        {
+          "name": "expected",
+          "type": "string",
+          "description": "Expected outcome"
+        },
+        {
+          "name": "actual",
+          "type": "string",
+          "description": "Observed behavior"
+        }
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a QA engineer producing structured bug reports."
+        },
+        {
+          "role": "user",
+          "content": "Bug: {{title}}\nSteps: {{steps}}\nExpected: {{expected}}\nActual: {{actual}}"
+        }
+      ]
+    }
+  ]
+}
