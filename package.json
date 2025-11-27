@@ -1,6 +1,6 @@
 {
   "name": "github-stars-contributions-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MCP server for managing GitHub Stars contributions and profile links",
   "main": "dist/index.mjs",
   "bin": {

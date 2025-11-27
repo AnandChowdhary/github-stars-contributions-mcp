@@ -381,11 +381,12 @@ server.tool(
       query PublicProfile($username: String!) {
         publicProfile(username: $username) {
           id
-          login
+          username
           name
           bio
           avatar
-          company
+          status
+          featured
           country
           contributions {
             id
@@ -428,11 +429,12 @@ server.tool(
       query StarsPublicData($featured: Boolean) {
         starsPublicData(featured: $featured) {
           id
-          login
+          username
           name
           bio
           avatar
-          company
+          status
+          featured
           country
         }
       }
@@ -460,10 +462,18 @@ server.tool(
       query {
         loggedUser {
           id
-          login
-          name
-          bio
+          username
           avatar
+          email
+          nominee {
+            status
+            name
+            bio
+            featured
+            country
+            jobTitle
+            company
+          }
         }
       }
     `;
