@@ -28,28 +28,9 @@ An MCP (Model Context Protocol) server for managing your [GitHub Stars](https://
 - **Node.js** v18 or later
 - **GitHub Stars API token** — Get yours from [stars.github.com/profile](https://stars.github.com/profile) under the "Token" tab
 
-## 🚀 Installation
+## 🚀 Quick start
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/AnandChowdhary/github-stars-contributions-mcp.git
-cd github-stars-contributions-mcp
-```
-
-### 2. Install dependencies
-
-```bash
-npm install
-```
-
-### 3. Get your API token
-
-1. Go to [stars.github.com/profile](https://stars.github.com/profile)
-2. Navigate to the **Token** tab
-3. Copy your API token
-
-## ⚙️ Configuration
+Add the server to your MCP config:
 
 ### Cursor IDE
 
@@ -59,10 +40,8 @@ Add to your `~/.cursor/mcp.json`:
 {
   "mcpServers": {
     "github-stars": {
-      "command": "node",
-      "args": [
-        "/absolute/path/to/github-stars-contributions-mcp/github-stars-contributions-mcp.mjs"
-      ],
+      "command": "npx",
+      "args": ["-y", "github-stars-contributions-mcp"],
       "env": {
         "GITHUB_STARS_TOKEN": "your-api-token-here"
       }
@@ -77,6 +56,40 @@ Add to your Claude Desktop config file:
 
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "github-stars": {
+      "command": "npx",
+      "args": ["-y", "github-stars-contributions-mcp"],
+      "env": {
+        "GITHUB_STARS_TOKEN": "your-api-token-here"
+      }
+    }
+  }
+}
+```
+
+### Get your API token
+
+1. Go to [stars.github.com/profile](https://stars.github.com/profile)
+2. Navigate to the **Token** tab
+3. Copy your API token and replace `your-api-token-here` in the config above
+
+## ⚙️ Alternative installation
+
+### From source
+
+If you prefer to run from source:
+
+```bash
+git clone https://github.com/AnandChowdhary/github-stars-contributions-mcp.git
+cd github-stars-contributions-mcp
+npm install
+```
+
+Then use this config:
 
 ```json
 {
@@ -98,7 +111,7 @@ Add to your Claude Desktop config file:
 
 ```bash
 export GITHUB_STARS_TOKEN="your-api-token-here"
-npm start
+npx github-stars-contributions-mcp
 ```
 
 ## 🎯 Available tools
@@ -235,8 +248,8 @@ Your API token may have expired. Generate a new one from [stars.github.com/profi
 
 ### Server not connecting
 
-1. Verify the path to `github-stars-contributions-mcp.mjs` is absolute and correct
-2. Ensure Node.js v18+ is installed
+1. Ensure Node.js v18+ is installed
+2. Check that the `GITHUB_STARS_TOKEN` is set correctly
 3. Restart your AI assistant after config changes
 
 ## 🔗 Related projects
