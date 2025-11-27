@@ -1,13 +1,19 @@
 {
   "name": "github-stars-contributions-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for managing GitHub Stars contributions and profile links",
-  "main": "github-stars-contributions-mcp.mjs",
+  "main": "dist/index.mjs",
   "bin": {
-    "github-stars-contributions-mcp": "./github-stars-contributions-mcp.mjs"
+    "github-stars-contributions-mcp": "./dist/index.mjs"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "start": "node github-stars-contributions-mcp.mjs"
+    "build": "ncc build github-stars-contributions-mcp.mjs -o dist",
+    "prepublishOnly": "npm run build",
+    "start": "node github-stars-contributions-mcp.mjs",
+    "start:dist": "node dist/index.mjs"
   },
   "repository": {
     "type": "git",
@@ -31,5 +37,8 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.23.0",
     "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.4"
   }
 }
