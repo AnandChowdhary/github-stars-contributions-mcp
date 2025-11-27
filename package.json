@@ -1,0 +1,32 @@
+{
+  "name": "github-stars-contributions-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for managing GitHub Stars contributions and profile links",
+  "main": "github-stars-contributions-mcp.mjs",
+  "scripts": {
+    "start": "node github-stars-contributions-mcp.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnandChowdhary/github-stars-contributions-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "github-stars",
+    "claude",
+    "cursor",
+    "ai-assistant"
+  ],
+  "author": "Anand Chowdhary",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AnandChowdhary/github-stars-contributions-mcp/issues"
+  },
+  "homepage": "https://github.com/AnandChowdhary/github-stars-contributions-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.23.0",
+    "zod": "^4.1.13"
+  }
+}
